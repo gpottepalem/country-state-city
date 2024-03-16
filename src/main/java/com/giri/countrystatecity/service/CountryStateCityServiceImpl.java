@@ -33,6 +33,12 @@ public class CountryStateCityServiceImpl implements CountryStateCityService {
     }
 
     @Override
+    public Country getCountryByNameEntityGraph(String name) {
+        return countryRepository.findByName(name)
+            .orElseThrow(()-> new IllegalArgumentException(String.format("Illegal Country name:%s", name)));
+    }
+
+    @Override
     public List<Country> getAllCountries() {
         return countryRepository.findAll();
     }

@@ -11,7 +11,10 @@ import java.util.List;
  */
 public interface CountryStateCityService {
     Country getCountryByName(String name);
+
     Country getCountryByNameSingleQuery(String name);
+
+    Country getCountryByNameEntityGraph(String name);
 
     List<Country> getAllCountries();
     List<Country> getAllCountriesSingleQuery();

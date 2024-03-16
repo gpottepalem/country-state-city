@@ -9,6 +9,7 @@ scalar DateTime
 type Query {
     countryByName(name: String!): Country
     countryByNameSingleQuery(name: String!): Country
+    countryByNameEntityGraph(name: String!): Country
 
     allCountries: [Country!]!
     allCountriesSingleQuery: [Country!]!

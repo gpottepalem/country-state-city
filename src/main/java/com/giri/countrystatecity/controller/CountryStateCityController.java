@@ -41,6 +41,11 @@ public class CountryStateCityController {
     }
 
     @QueryMapping
+    Country countryByNameEntityGraph(@NonNull @Argument String name) {
+        return countryStateCityService.getCountryByNameEntityGraph(name);
+    }
+
+    @QueryMapping
     List<Country> allCountriesSingleQuery() {
         return countryStateCityService.getAllCountriesSingleQuery();
     }
