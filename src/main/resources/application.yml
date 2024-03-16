@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: ${spring.application.name}
+
+  flyway:
+    enabled: true
+    schemas: country-state-city
+  graphql:
+    graphiql:
+      enabled: true
+  docker:
+    compose:
+      enabled: true
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        ddl-auto: validate
+        default_schema: country-state-city
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+info:
+  application:
+    name: ${spring.application.name}
+    description: A Spring Boot GraphQL application
+    version: '@project.version@'
+    spring-boot-version: '@project.parent.version@'
+server:
+  tomcat:
+    mbeanregistry:
+      enabled: true
+management:
+  info:
+    env:
+      enabled: true
+    git:
+      mode: full
+    java:
+      enabled: true
+logging:
+  level:
+    root: info
+    org.springframework: info
+    # log SQL with binding parameter values
+    org.hibernate.SQL: debug
+    org.hibernate.orm.jdbc.bind: trace

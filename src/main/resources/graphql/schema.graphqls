@@ -1,0 +1,55 @@
+"Extended scalar type - Long"
+scalar Long
+  @specifiedBy(url: "https://ibm.github.io/graphql-specs/custom-scalars/long.html")
+"Extended scalar type - DateTime"
+scalar DateTime
+  @specifiedBy(url: "https://scalars.graphql.org/andimarek/date-time.html")
+
+"Query root"
+type Query {
+    countryByName(name: String!): Country
+    countryByNameSingleQuery(name: String!): Country
+
+    allCountries: [Country!]!
+    allCountriesSingleQuery: [Country!]!
+}
+
+"Country"
+type Country {
+    "Unique id"
+    id: ID!
+    "Name"
+    name: String!
+    "States"
+    states: [State!]!
+    "Created datetime"
+    dateCreated: DateTime!
+    "Updated datetime"
+    lastUpdated: DateTime!
+}
+
+"State"
+type State {
+    "Unique id"
+    id: ID!
+    "Name"
+    name: String!
+    "Cities"
+    cities: [City!]!
+    "Created datetime"
+    dateCreated: DateTime!
+    "Updated datetime"
+    lastUpdated: DateTime!
+}
+
+"City"
+type City {
+    "Unique id"
+    id: ID!
+    "Name"
+    name: String!
+    "Created datetime"
+    dateCreated: DateTime!
+    "Updated datetime"
+    lastUpdated: DateTime!
+}
