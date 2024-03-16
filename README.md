@@ -3,6 +3,67 @@ A simple GraphQL application to demonstrate the classic N+1 DB query issue.
 
 # Getting Started
 
+## Prerequisites
+
+### JDK 21
+Make sure that you have JDK 21 installed and the current version is set to 21 in your path and IDE.
+[SDKMAN](https://sdkman.io/) is a very nice tool to manage multiple version of SDKs including Java, Spring Boot, Maven
+and many others.
+
+### Docker Compose managed `PostgreSQL DB`  
+> **NOTE**  
+> You need to have the `docker` and `docker compose` (or `docker-compose`) CLI applications on your path. The minimum
+supported Docker Compose version is `2.2.0`.
+>
+
+## Building and Running the app
+
+### Using Maven wrapper
+You can build and run the application using the following commands from the application root directory:
+```shell script
+# clean, and run the app
+./mvnw clean spring-boot:run
+```
+Once the application comes up, open the browser and hit http://localhost:8080/graphiql?path=/graphql for GraphiQL gui 
+console and run GraphQL queries. The following are some sample queries:
+```graphql
+# Query all data for all countries: N +1 queries
+query AllCountries {
+    allCountries {
+        name
+        states {
+            name
+            cities {
+                name
+            }
+        }
+    }
+}
+
+# Query all data for all countries: JPQL- Single query
+query AllCountriesSingleQuery {
+    allCountriesSingleQuery {
+        name
+    }
+}
+
+# Query all data for a country by name: EntityGrapg single query
+query CountryByNameEntityGraph {
+    countryByNameSingleQuery(name: "India") {
+        name
+        states {
+            name
+            cities {
+                name
+            }
+        }
+    }
+}
+```
+
+> **NOTE**  
+> You can check your application logs for the generated SQL.
+
 ### Reference Documentation
 For further reference, please consider the following sections:
 
