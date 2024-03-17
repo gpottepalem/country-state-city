@@ -1,5 +1,8 @@
 # Country-City-state
-A simple GraphQL application to demonstrate the classic N+1 DB query issue.
+A simple [Spring Boot](https://spring.io/projects/spring-boot), [Spring Data JPA](https://spring.io/projects/spring-data-jpa),
+[Spring GraphQL](https://spring.io/projects/spring-graphql) application to demonstrate the classic N+1 DB query 
+issue along with solution using both JPA JPQL [@Query](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html), 
+and JPA [@EntityGraph](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html#jpa.entity-graph).
 
 # Getting Started
 
