@@ -1,7 +1,8 @@
-# Country-City-state
+# Country-City-State
 A simple [Spring Boot](https://spring.io/projects/spring-boot), [Spring Data JPA](https://spring.io/projects/spring-data-jpa),
-[Spring GraphQL](https://spring.io/projects/spring-graphql) application to demonstrate the classic N+1 DB query 
-issue along with solution using both JPA JPQL [@Query](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html), 
+[Spring GraphQL](https://spring.io/projects/spring-graphql) application to demonstrate the 
+[Classic N+1 Database query problem](https://stackoverflow.com/questions/97197/what-is-the-n1-selects-problem-in-orm-object-relational-mapping)
+along with solution using both JPA JPQL [@Query](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html), 
 and JPA [@EntityGraph](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html#jpa.entity-graph).
 
 # Getting Started
