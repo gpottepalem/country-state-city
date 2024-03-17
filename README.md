@@ -24,6 +24,12 @@ You can build and run the application using the following commands from the appl
 # clean, and run the app
 ./mvnw clean spring-boot:run
 ```
+
+### Seeded with Test Data
+The application's database is seeded with some test data: a couple of Countries, each Country with a couple of States 
+and each State with a couple of Cities.
+
+### GraphiQL query console
 Once the application comes up, open the browser and hit http://localhost:8080/graphiql?path=/graphql for GraphiQL gui 
 console and run GraphQL queries. The following are some sample queries:
 ```graphql
