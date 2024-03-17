@@ -1,4 +1,4 @@
-# Country-City-State
+# Country-State-City
 A simple [Spring Boot](https://spring.io/projects/spring-boot), [Spring Data JPA](https://spring.io/projects/spring-data-jpa),
 [Spring GraphQL](https://spring.io/projects/spring-graphql) application to demonstrate the 
 [Classic N+1 Database query problem](https://stackoverflow.com/questions/97197/what-is-the-n1-selects-problem-in-orm-object-relational-mapping)
@@ -71,6 +71,9 @@ query CountryByNameEntityGraph {
 }
 ```
 
+### GraphiQL Screenshot
+![GraphiQL Screenshot](graphiql.png)
+
 > **NOTE**  
 > You can check your application logs for the generated SQL.
 
@@ -114,6 +117,6 @@ Testcontainers has been configured to use the following Docker images:
 
 Please review the tags of the used images and set them to the same as you're running in production.
 
-GraphiQL
+### GraphiQL
 
 http://localhost:8080/graphiql?path=/graphql
