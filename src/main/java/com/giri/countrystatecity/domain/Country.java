@@ -37,7 +37,7 @@ public class Country extends BaseEntity {
     @OneToMany(mappedBy = "country", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
     @ToString.Exclude
-    private Set<State> states = new LinkedHashSet<>();
+    private Set<State> states = new LinkedHashSet<>(); // hasMany
 
     /**
      * Helper, add all states by setting this as country reference (owning side) on them.

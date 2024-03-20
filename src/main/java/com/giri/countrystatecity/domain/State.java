@@ -40,12 +40,12 @@ public class State extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "country_id")
     @ToString.Exclude
-    private Country country; // owning side of the relationship
+    private Country country; // belongsTo, owning side of the relationship
 
     @OneToMany(mappedBy = "state", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
     @ToString.Exclude
-    private Set<City> cities = new LinkedHashSet<>();
+    private Set<City> cities = new LinkedHashSet<>(); // hasMany
 
     /**
      * Helper, add all cities by setting this as state reference (owning side) on them.

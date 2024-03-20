@@ -32,5 +32,5 @@ public class City extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "state_id")
     @ToString.Exclude
-    private State state;
+    private State state; // belongsTo, owning side of the relationship
 }
