@@ -36,6 +36,8 @@ import java.util.Set;
 @ToString
 public class State extends BaseEntity {
     private String name;
+    private String code;
+    private Long population = 100L;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "country_id")

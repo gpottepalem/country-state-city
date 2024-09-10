@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.Optional;
 
 /**
+ * Repository for entity: {@link Country}
+ *
  * @author Giri Pottepalem
  * created Mar 16, 2024
  */

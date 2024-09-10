@@ -1,6 +1,8 @@
 package com.giri.countrystatecity.controller;
 
 import com.giri.countrystatecity.domain.Country;
+import com.giri.countrystatecity.domain.State;
+import com.giri.countrystatecity.domain.StatePopulation;
 import com.giri.countrystatecity.service.CountryStateCityService;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
@@ -48,5 +50,15 @@ public class CountryStateCityController {
     @QueryMapping
     List<Country> allCountriesSingleQuery() {
         return countryStateCityService.getAllCountriesSingleQuery();
+    }
+
+    @QueryMapping
+    List<StatePopulation> statesByPopulationGreaterThanJpql(@NonNull @Argument Long population) {
+        return countryStateCityService.getAllByPopulationGreaterThanJpql(population);
+    }
+
+    @QueryMapping
+    List<State> statesByPopulationGreaterThan(@NonNull @Argument Long population) {
+        return countryStateCityService.getAllByPopulationGreaterThan(population);
     }
 }

@@ -28,6 +28,7 @@ import lombok.experimental.SuperBuilder;
 @ToString
 public class City extends BaseEntity {
     private String name;
+    private Long population;
 
     @ManyToOne
     @JoinColumn(name = "state_id")

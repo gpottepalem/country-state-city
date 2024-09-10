@@ -57,7 +57,7 @@ query AllCountriesSingleQuery {
     }
 }
 
-# Query all data for a country by name: EntityGrapg single query
+# Query all data for a country by name: EntityGraph single query
 query CountryByNameEntityGraph {
     countryByNameSingleQuery(name: "India") {
         name
@@ -67,6 +67,23 @@ query CountryByNameEntityGraph {
                 name
             }
         }
+    }
+}
+
+query StatesByPopulationGreaterThan {
+    statesByPopulationGreaterThan(population: 10000000) {
+        id
+        name
+        code
+        population
+    }
+}
+
+# Query states by population greater than: Specific fields of Entity and non Entity object
+query StatesByPopulationGreaterThanJpql {
+    statesByPopulationGreaterThanJpql(population: 100000) {
+        name
+        population
     }
 }
 ```
@@ -120,3 +137,7 @@ Please review the tags of the used images and set them to the same as you're run
 ### GraphiQL
 
 http://localhost:8080/graphiql?path=/graphql
+
+### [Postman](https://learning.postman.com/docs/sending-requests/graphql/graphql-client-first-request/)
+
+http://localhost:8080/graphql

@@ -13,6 +13,8 @@ type Query {
 
     allCountries: [Country!]!
     allCountriesSingleQuery: [Country!]!
+    statesByPopulationGreaterThan(population: Long): [State]!
+    statesByPopulationGreaterThanJpql(population: Long): [StatePopulation]!
 }
 
 "Country"
@@ -35,6 +37,10 @@ type State {
     id: ID!
     "Name"
     name: String!
+    "Code"
+    code: String!
+    "Population"
+    population: Long
     "Cities"
     cities: [City!]!
     "Created datetime"
@@ -49,8 +55,18 @@ type City {
     id: ID!
     "Name"
     name: String!
+    "Population"
+    population: Long
     "Created datetime"
     dateCreated: DateTime!
     "Updated datetime"
     lastUpdated: DateTime!
+}
+
+"StatePopulation"
+type StatePopulation {
+    "Name"
+    name: String!
+    "Population"
+    population: Long
 }

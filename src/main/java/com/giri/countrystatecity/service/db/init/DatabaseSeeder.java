@@ -39,30 +39,30 @@ public class DatabaseSeeder {
         if (countryRepository.count() == 0) {
             log.info("Seeding database with one-time data...");
             var india = Country.builder().name("India").build();
-            var andhraPradesh = State.builder().name("Andhra Pradesh").build();
+            var andhraPradesh = State.builder().name("Andhra Pradesh").code("AP").population(49_577_103L).build();
             andhraPradesh.addCities(Set.of(
-                City.builder().name("Nellore").build(),
-                City.builder().name("Chittoor").build()
+                City.builder().name("Nellore").population(838_000L).build(),
+                City.builder().name("Chittoor").population(175_647L).build()
             ));
 
-            var telangana = State.builder().name("Telangana").build();
+            var telangana = State.builder().name("Telangana").code("TS").population(35_003_674L).build();
             telangana.addCities(Set.of(
-                City.builder().name("Hyderabad").build(),
-                City.builder().name("Secunderabad").build()
+                City.builder().name("Hyderabad").population(11_069_000L).build(),
+                City.builder().name("Secunderabad").population(204_182L).build()
             ));
             india.addStates(Set.of(andhraPradesh, telangana));
 
             var usa = Country.builder().name("United States of America").build();
-            var massachusetts = State.builder().name("Massachusetts").build();
+            var massachusetts = State.builder().name("Massachusetts").code("MA").population(7_029_917L).build();
             massachusetts.addCities(Set.of(
-                City.builder().name("Boston").build(),
-                City.builder().name("Canton").build()
+                City.builder().name("Boston").population(650_706L).build(),
+                City.builder().name("Canton").population(24_370L).build()
             ));
 
-            var illinois = State.builder().name("Illinois").build();
+            var illinois = State.builder().name("Illinois").code("IL").population(12_812_508L).build();
             illinois.addCities(Set.of(
-                City.builder().name("Naperville").build(),
-                City.builder().name("Urbana").build()
+                City.builder().name("Naperville").population(149_540L).build(),
+                City.builder().name("Urbana").population(38_468L).build()
             ));
             usa.addStates(Set.of(massachusetts, illinois));
 

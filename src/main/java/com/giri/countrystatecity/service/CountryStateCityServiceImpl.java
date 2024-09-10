@@ -1,7 +1,11 @@
 package com.giri.countrystatecity.service;
 
 import com.giri.countrystatecity.domain.Country;
+import com.giri.countrystatecity.domain.State;
+import com.giri.countrystatecity.domain.StatePopulation;
 import com.giri.countrystatecity.repository.CountryRepository;
+import com.giri.countrystatecity.repository.StateRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,12 +17,10 @@ import java.util.List;
  * created Mar 16, 2024
  */
 @Service
+@AllArgsConstructor
 public class CountryStateCityServiceImpl implements CountryStateCityService {
-    private CountryRepository countryRepository;
-
-    public CountryStateCityServiceImpl(CountryRepository cityRepository) {
-        this.countryRepository = cityRepository;
-    }
+    private final CountryRepository countryRepository;
+    private final StateRepository stateRepository;
 
     @Override
     public Country getCountryByName(String name) {
@@ -46,5 +48,15 @@ public class CountryStateCityServiceImpl implements CountryStateCityService {
     @Override
     public List<Country> getAllCountriesSingleQuery() {
         return countryRepository.findAllSingleQueryJoinFetch();
+    }
+
+    @Override
+    public List<State> getAllByPopulationGreaterThan(Long population) {
+        return stateRepository.findAllByPopulationGreaterThan(population);
+    }
+
+    @Override
+    public List<StatePopulation> getAllByPopulationGreaterThanJpql(Long population) {
+        return stateRepository.findAllStatesByPopulationGreaterThan(population);
     }
 }
