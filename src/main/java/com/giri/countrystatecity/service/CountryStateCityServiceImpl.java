@@ -59,4 +59,12 @@ public class CountryStateCityServiceImpl implements CountryStateCityService {
     public List<StatePopulation> getAllByPopulationGreaterThanJpql(Long population) {
         return stateRepository.findAllStatesByPopulationGreaterThan(population);
     }
+
+    @Override
+    public List<StatePopulation> getAllByPopulationGreaterThanJpqlRaw(Long population) {
+        List<List<Object>> states = stateRepository.findAllStatesByPopulationGreaterThanJpqlRaw(population);
+        return states.stream()
+            .map(record -> new StatePopulation((String) record.get(0), (Long)record.get(1)))
+            .toList();
+    }
 }

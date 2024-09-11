@@ -53,12 +53,17 @@ public class CountryStateCityController {
     }
 
     @QueryMapping
+    List<State> statesByPopulationGreaterThan(@NonNull @Argument Long population) {
+        return countryStateCityService.getAllByPopulationGreaterThan(population);
+    }
+
+    @QueryMapping
     List<StatePopulation> statesByPopulationGreaterThanJpql(@NonNull @Argument Long population) {
         return countryStateCityService.getAllByPopulationGreaterThanJpql(population);
     }
 
     @QueryMapping
-    List<State> statesByPopulationGreaterThan(@NonNull @Argument Long population) {
-        return countryStateCityService.getAllByPopulationGreaterThan(population);
+    List<StatePopulation> statesByPopulationGreaterThanJpqlRaw(@NonNull @Argument Long population) {
+        return countryStateCityService.getAllByPopulationGreaterThanJpqlRaw(population);
     }
 }

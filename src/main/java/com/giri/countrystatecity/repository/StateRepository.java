@@ -30,4 +30,16 @@ public interface StateRepository extends JpaRepository<State, Long> {
             WHERE state.population > :population
     """)
     List<StatePopulation> findAllStatesByPopulationGreaterThan(Long population);
+
+    /**
+     * JPQL - Query to fetch specific fields of Entity and return Raw data
+     *
+     * @param population the population
+     * @return list of light-weight StatePopulation objects
+     */
+    @Query("""
+        SELECT state.name, state.population from State state
+            WHERE state.population > :population
+    """)
+    List<List<Object>> findAllStatesByPopulationGreaterThanJpqlRaw(Long population);
 }

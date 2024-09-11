@@ -15,6 +15,7 @@ type Query {
     allCountriesSingleQuery: [Country!]!
     statesByPopulationGreaterThan(population: Long): [State]!
     statesByPopulationGreaterThanJpql(population: Long): [StatePopulation]!
+    statesByPopulationGreaterThanJpqlRaw(population: Long): [StatePopulation]!
 }
 
 "Country"

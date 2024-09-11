@@ -24,4 +24,5 @@ public interface CountryStateCityService {
 
     List<State> getAllByPopulationGreaterThan(Long population);
     List<StatePopulation> getAllByPopulationGreaterThanJpql(Long population);
+    List<StatePopulation> getAllByPopulationGreaterThanJpqlRaw(Long population);
 }
