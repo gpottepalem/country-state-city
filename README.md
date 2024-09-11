@@ -86,6 +86,14 @@ query StatesByPopulationGreaterThanJpql {
         population
     }
 }
+
+# Query states by population greater than: Specific fields data as raw Object
+query StatesByPopulationGreaterThanJpqlRaw {
+    statesByPopulationGreaterThanJpqlRaw(population:200000) {
+        name
+        population
+    }
+}
 ```
 
 ### GraphiQL Screenshot
@@ -134,10 +142,12 @@ Testcontainers has been configured to use the following Docker images:
 
 Please review the tags of the used images and set them to the same as you're running in production.
 
-### GraphiQL
+### [GraphiQL](https://github.com/graphql/graphiql)
 
 http://localhost:8080/graphiql?path=/graphql
 
 ### [Postman](https://learning.postman.com/docs/sending-requests/graphql/graphql-client-first-request/)
 
-http://localhost:8080/graphql
+http://localhost:8080/graphql  
+Postman also offers `Schema refresh` option for refreshing GraphQl schema. Similar to 
+[Graphiql](https://github.com/graphql/graphiql)'s `Re-fetch GraphQL schema` option.
