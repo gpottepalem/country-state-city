@@ -7,6 +7,12 @@ import org.springframework.context.annotation.Bean;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.utility.DockerImageName;
 
+/**
+ * Test Configuration.
+ *
+ * @author Giri Pottepalem
+ * created Sep 13, 2024
+ */
 @TestConfiguration(proxyBeanMethods = false)
 public class CountryStateCityApplicationTestConfig {
 
