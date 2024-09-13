@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.assertj.core.api.Assertions.*;
 
 /**
- * Smoke Test to ensure that the application starts up.
+ * Integration Smoke Test to ensure that the application starts up.
  *
  * @author Giri Pottepalem
  * created Sep 13, 2024
@@ -23,7 +23,7 @@ class CountryStateCityApplicationTests {
     CountryStateCityService countryStateCityService;
 
     @Test
-    @DisplayName("An integration Smoke Test to ensure that the application contetx loads and autowiring works.")
+    @DisplayName("An integration Smoke Test to ensure that the application context loads and autowiring works.")
     void smokeTest_context_loads_and_autowiring_works() {
         assertThat(countryStateCityService).isNotNull();
     }
