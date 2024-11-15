@@ -4,6 +4,6 @@ services:
     environment:
       - 'POSTGRES_DB=country-state-city'
       - 'POSTGRES_PASSWORD=secret'
-      - 'POSTGRES_USER=myuser'
+      - 'POSTGRES_USER=my_user'
     ports:
       - '5444:5432'

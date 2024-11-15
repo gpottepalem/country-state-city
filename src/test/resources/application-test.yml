@@ -10,6 +10,6 @@ spring:
         format_sql: true
   datasource:
     driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
-    url: jdbc:tc:postgresql:15.3:///ml_recommendation_svc_test
-    username: ml_recommendation_svc_test
-    password: dba
+    url: jdbc:tc:postgresql:15.3:///country-state-city_test
+    username: test_user
+    password: secret

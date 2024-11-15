@@ -14,7 +14,7 @@ import org.testcontainers.utility.DockerImageName;
  * created Sep 13, 2024
  */
 @TestConfiguration(proxyBeanMethods = false)
-public class CountryStateCityApplicationTestConfig {
+class CountryStateCityApplicationTestConfig {
 
     @Bean
     @ServiceConnection

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: ${spring.application.name}
+  profiles:
+    active: test
+
+# custom property for banner
+#app:
+#  version: @project.version@

@@ -9,8 +9,8 @@ and JPA [@EntityGraph](https://docs.spring.io/spring-data/jpa/reference/jpa/quer
 
 ## Prerequisites
 
-### JDK 21
-Make sure that you have JDK 21 installed and the current version is set to 21 in your path and IDE.
+### JDK 22
+Make sure that you have JDK 22 installed and the current version is set to 22 in your path and IDE.
 [SDKMAN](https://sdkman.io/) is a very nice tool to manage multiple version of SDKs including Java, Spring Boot, Maven
 and many others.
 
